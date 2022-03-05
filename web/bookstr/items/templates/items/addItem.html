@@ -3,7 +3,7 @@
 <div class="item">
     
     <form action="/save-item/" method="post" >
-        
+        {% csrf_token %}
         <div class="title">
             <p>Đăng ký Sách Bán</p>
         </div>
@@ -14,7 +14,6 @@
         <div class="item-book col-auto">
             <label for="type_book">Type Book: </label>
             <select class="form-select" aria-label="Default select example" name="type_book">
-                <option selected>---Choose a option(require) ----</option>
                 <option value="H">History</option>
                 <option value="C">Classic</option>
                 <option value="Ho">Horror</option>
@@ -37,13 +36,13 @@
         <div class="item-book col-auto ">
             <label for="">Sell:</label>
             <div class="form-check  justify-content-around" name="status">
-                <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1">
+                <input class="form-check-input" type="radio" name="status"  value="True">
                 <label class="form-check-label" for="status">
                   Sell Book.
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" name="status"  value="False">
                 <label class="form-check-label" for="status">
                   Don't Sell Book.
                 </label>

@@ -1,6 +1,18 @@
 {% extends 'items/index.html'%}
 {% block addItem %}
 <div class="content">
-    <p>hello</p>
+    {% load static %}
+    {% for item in Items %} 
+    <div class="list-book">
+        <div class="content__image">
+            <img class="content__img" src="{% static 'items/book.png' %}" alt="">
+        </div>
+        <div class="content__info">
+            <p>Tên Sách: {{item.name_book}}</p>
+            <p>Giá: {{item.price}}$</p>
+            <p>Tác Giả: {{item.author}}</p>
+        </div>
+    </div>
+    {% endfor %} 
 </div>
 {% endblock %}
